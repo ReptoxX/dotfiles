@@ -1,0 +1,78 @@
+{
+    "title": "Mousebuttons in Projector",
+    "maintainers": [
+      "ReptoxX"
+    ],
+    "rules": [
+      {
+        "description": "Changed MouseButton in Projector",
+        "manipulators": [
+          {
+            "type": "basic",
+            "from": {
+              "pointing_button": "button4",
+              "modifiers": {
+                "optional": [
+                  "any"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "f1",
+                "modifiers": [
+                    "command",
+                    "option"
+                ]
+              }
+            ],
+            "conditions": [
+              {
+                "type": "frontmost_application_if",
+                "file_paths": [
+                  "ck2\\.app",
+                  "eu4\\.app"
+                ],
+                "bundle_identifiers": [
+                  "com.electron.projector"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "basic",
+            "from": {
+              "pointing_button": "button5",
+              "modifiers": {
+                "optional": [
+                  "any"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "f2",
+                "modifiers": [
+                    "command",
+                    "option"
+                ]
+              }
+            ],
+            "conditions": [
+              {
+                "type": "frontmost_application_if",
+                "file_paths": [
+                  "ck2\\.app",
+                  "eu4\\.app"
+                ],
+                "bundle_identifiers": [
+                  "com.electron.projector"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  
