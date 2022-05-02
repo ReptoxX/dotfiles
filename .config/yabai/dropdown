@@ -5,7 +5,7 @@ import subprocess
 import click
 from click import echo
 
-YABAI = '/opt/homebrew/bin/yabai'
+YABAI = 'yabai'
 
 def run(cmd: str):
     return subprocess.run(cmd, shell=True, capture_output=True).stdout
