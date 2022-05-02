@@ -1,3 +1,4 @@
+#!/usr/bin/env sh
 #SKHD STUFF
 
 # if you're having troubles finding key codes for a key just type skhd --observe in a terminal and type a key. Pretty cool! Or just check the wiki.
@@ -164,5 +165,3 @@ ctrl + alt + cmd + lshift - 0x43 : window=$(yabai -m query --windows --window | 
 #ctrl + alt - 3  : yabai -m display --focus 3
 
 cmd + shift - s : python3 ~/.config/yabai/dropdown Spotify
-
-
