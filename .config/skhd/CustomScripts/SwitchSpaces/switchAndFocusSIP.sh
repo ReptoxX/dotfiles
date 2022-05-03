@@ -18,7 +18,7 @@ CurrentlyFocusedWindowID=$(echo $CurrentlyFocusedWindow | jq -re ".id")
 
 CurrentlyFocusedDisplay=$(echo $CurrentlyFocusedWindow | jq -re ".display")
 
-CurrentlyVisibleSpaceNames=$(yabai -m query --spaces | jq -re ".[] | select(.visible == 1)" | jq -re ".label")
+CurrentlyVisibleSpaceNames=$(yabai -m query --spaces | jq -re '.[] | select(.["is-visible"] == true)' | jq -re ".label")
 
 # my custom space names in yabairc:
 #  yabai -m space 1 --label one
@@ -29,16 +29,16 @@ CurrentlyVisibleSpaceNames=$(yabai -m query --spaces | jq -re ".[] | select(.vis
 #  yabai -m space 6 --label six
 case $inputKeyNumber in
 '1')
-    firstSpaceName='one'
-    firstspacenumber='1'
-    secondSpaceName='two'
-    secondSpacenumber='2'
-    ;;
-'2')
     firstSpaceName='three'
     firstspacenumber='3'
     secondSpaceName='four'
     secondSpacenumber='4'
+    ;;
+'2')
+    firstSpaceName='one'
+    firstspacenumber='1'
+    secondSpaceName='two'
+    secondSpacenumber='2'
     ;;
 '3')
     firstSpaceName='five'
@@ -65,15 +65,15 @@ TryFocusOnSpaceWereGoingToElseFocusOnAnyVisibleWindow() { # function
     # $4 space Number coming FROM 1-6
     windowOnNextSpace=$(yabai -m query --spaces --space $1 | jq -re '.["first-window"]') # is there an app on next space?
     if [[ "$windowOnNextSpace" -ne "0" ]]; then
-        $(skhd -k "ctrl + alt + cmd - $2")
+        yabai -m space --focus "$2"
         focusWindow "$windowOnNextSpace"
     else # no app on new space
-        newWindowToFocusIfPossible=$(yabai -m query --windows | jq -re ".[] | select((.visible == 1) and .space != $4).id" | head -n 1)
+        newWindowToFocusIfPossible=$(yabai -m query --windows | jq -re '.[] | select((.["is-visible"] == true) and .space != '$4').id' | head -n 1)
         if [[ -n "$newWindowToFocusIfPossible" ]]; then
-            $(skhd -k "ctrl + alt + cmd - $2")
+            yabai -m space --focus "$2"
             focusWindow $newWindowToFocusIfPossible
         else
-            $(skhd -k "ctrl + alt + cmd - $2")
+            yabai -m space --focus "$2"
         fi
     fi
 }
@@ -81,7 +81,7 @@ TryFocusOnSpaceWereGoingToElseFocusOnAnyVisibleWindow() { # function
 if [[ $CurrentlyVisibleSpaceNames == *$firstSpaceName* ]]; then
     if [ -n ${CurrentlyFocusedWindowID} ]; then # (-n) >> != null
         if [ $CurrentlyFocusedDisplay -ne $inputKeyNumber ]; then
-            $(skhd -k "ctrl + alt + cmd - $secondSpacenumber") # shortcut for changing spaces with SIP Enabled
+            yabai -m space --focus "$secondSpacenumber"
             focusWindow $CurrentlyFocusedWindowID
         else
             TryFocusOnSpaceWereGoingToElseFocusOnAnyVisibleWindow $secondSpaceName $secondSpacenumber $firstSpaceName $firstspacenumber
@@ -92,7 +92,7 @@ if [[ $CurrentlyVisibleSpaceNames == *$firstSpaceName* ]]; then
 elif [[ $CurrentlyVisibleSpaceNames == *$secondSpaceName* ]]; then
     if [ -n ${CurrentlyFocusedWindowID} ]; then # (-n) >> != null
         if [ $CurrentlyFocusedDisplay -ne $inputKeyNumber ]; then
-            $(skhd -k "ctrl + alt + cmd - $firstspacenumber") # shortcut for changing spaces with SIP Enabled
+            yabai -m space --focus "$firstspacenumber"
             focusWindow $CurrentlyFocusedWindowID
         else
             TryFocusOnSpaceWereGoingToElseFocusOnAnyVisibleWindow $firstSpaceName $firstspacenumber $secondSpaceName $secondSpacenumber

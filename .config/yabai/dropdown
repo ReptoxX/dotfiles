@@ -38,7 +38,7 @@ def main(app, scratchpad):
     else:
         # otherwise pull to current workspace and focus
         run(f'{YABAI} -m window {window["id"]} --space mouse && '
-            f'{YABAI} -m window {window["id"]} --grid 10:10:1:1:8:8 &&'
+            f'{YABAI} -m window {window["id"]} --grid 3:10:0:1:10:8 &&'
             f'{YABAI} -m window --focus {window["id"]}')
         echo(f'{app} revealed')
 

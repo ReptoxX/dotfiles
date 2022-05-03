@@ -13,7 +13,7 @@ hyper - backspace : $(yabai -m window $(yabai -m query --windows --window | jq -
 
 # test a command
 # lshift - x : terminal-notifier -message "lshift - x"
-#lshift - x : terminal-notifier -message "$(yabai -m query --windows --window | jq -re ".id")"
+lshift - x : terminal-notifier -message "$(yabai -m query --windows --window | jq -re ".id")"
 
 ## open terminal
 #hyper - return : /Applications/iTerm.app/Contents/MacOS/iTerm2
@@ -29,8 +29,8 @@ hyper - u : ~/.config/skhd/CustomScripts/SwitchSpaces/moveWindowLeftAndFollowFoc
 hyper - p : ~/.config/skhd/CustomScripts/SwitchSpaces/moveWindowRightAndFollowFocus.sh
 
 ## focus display
-ctrl + cmd - 1 : yabai -m window --display 2 yabai -m display --focus 1
-ctrl + cmd - 2 : yabai -m window --display 1 yabai -m display --focus 2
+ctrl + cmd - 1 : yabai -m window --display 2 yabai -m display --focus 2
+ctrl + cmd - 2 : yabai -m window --display 1 yabai -m display --focus 1
 ctrl + cmd - 3 : yabai -m window --display 3 yabai -m display --focus 3
 
 ## increase window size
@@ -61,12 +61,12 @@ shift + lalt + lcmd + ctrl + ralt - 2 : yabai -m query --spaces --space | jq -re
 shift + lalt + lcmd + ctrl + ralt - 3 : yabai -m query --spaces --space | jq -re ".index" | xargs -I {} bash -c "if [[ '{}' = '5' ]]; then yabai -m window --space 6; elif [[ '{}' = '6' ]]; then yabai -m window --space 5; fi"
 
 # show next space per display
-#hyper - 1 : ~/.config/skhd/CustomScripts/SwitchSpaces/switchAndFocus.sh 1
-#hyper - 2 : ~/.config/skhd/CustomScripts/SwitchSpaces/switchAndFocus.sh 2
-#hyper - 3 : ~/.config/skhd/CustomScripts/SwitchSpaces/switchAndFocus.sh 3
-ctrl + alt + cmd + lshift - 1 : ~/.config/skhd/CustomScripts/SwitchSpaces/switchAndFocusSIP.sh 1
-ctrl + alt + cmd + lshift - 2 : ~/.config/skhd/CustomScripts/SwitchSpaces/switchAndFocusSIP.sh 2
-ctrl + alt + cmd + lshift - 3 : ~/.config/skhd/CustomScripts/SwitchSpaces/switchAndFocusSIP.sh 3
+hyper - 1 : ~/.config/skhd/CustomScripts/SwitchSpaces/switchAndFocusSIP.sh 1
+hyper - 2 : ~/.config/skhd/CustomScripts/SwitchSpaces/switchAndFocusSIP.sh 2
+hyper - 3 : ~/.config/skhd/CustomScripts/SwitchSpaces/switchAndFocusSIP.sh 3
+#ctrl + alt + cmd + lshift - 1 : ~/.config/skhd/CustomScripts/SwitchSpaces/switchAndFocusSIP.sh 1
+#ctrl + alt + cmd + lshift - 2 : ~/.config/skhd/CustomScripts/SwitchSpaces/switchAndFocusSIP.sh 2
+#ctrl + alt + cmd + lshift - 3 : ~/.config/skhd/CustomScripts/SwitchSpaces/switchAndFocusSIP.sh 3
 
 ## toggle window fullscreen zoom
 hyper - f : yabai -m window --toggle zoom-fullscreen
@@ -80,7 +80,7 @@ hyper - f : yabai -m window --toggle zoom-fullscreen
 #
 # go to each window WITHOUT going into a stack
 # ctrl + alt + cmd + lshift - i : yabai -m query --spaces | jq -re ".[] | select(.visible == 1).index" | xargs -I{} yabai -m query --windows --space {} | jq -re "[.[] | select((.\"stack-index\" <= 1) and (.app != \"Hammerspoon\"))]" | jq -sre "add | sort_by(.display, .frame.x, .frame.y, .id) | nth(index(map(select(.focused == 1))) - 1).id" | xargs -I{} yabai -m window --focus {}
-ctrl + alt + cmd + lshift - i : yabai -m query --spaces | jq -re ".[] | select(.visible == 1).index" | xargs -I{} yabai -m query --windows --space {} | jq -re "[.[] | select(.app != \"Hammerspoon\")]" | jq -sre "add | sort_by(.display, .frame.x, .frame.y, .id) | nth(index(map(select(.focused == 1))) - 1).id" | xargs -I{} yabai -m window --focus {}
+ctrl + alt + cmd + lshift - i : yabai -m query --spaces | jq -re '.[] | select(.["is-visible"] == true).index'  | xargs -I{} yabai -m query --windows --space {} | jq -re "[.[] | select(.app != \"Hammerspoon\")]" | jq -sre 'add | sort_by(.display, .frame.x, .frame.y, .id) | reverse | nth(index(map(select(.["has-focus"] == true))) - 1).id' | xargs -I{} yabai -m window --focus {}
 
 # ctrl + alt + cmd + rshift - i : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
 
@@ -165,3 +165,5 @@ ctrl + alt + cmd + lshift - 0x43 : window=$(yabai -m query --windows --window | 
 #ctrl + alt - 3  : yabai -m display --focus 3
 
 cmd + shift - s : python3 ~/.config/yabai/dropdown Spotify
+cmd + shift - m : python3 ~/.config/yabai/dropdown Mail
+cmd + shift - t : python3 ~/.config/yabai/dropdown iTerm2

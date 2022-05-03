@@ -7,5 +7,5 @@ focusWindow() {
     $(yabai -m window --focus $1) # $1 is the first argument passed in (window id).
 }
 
-$(yabai -m window --display prev || yabai -m window --display last)
+$(yabai -m window --display next || yabai -m window --display first)
 focusWindow "$curWindowId"
