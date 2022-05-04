@@ -49,12 +49,10 @@ case $inputKeyNumber in
 esac
 
 focusWindow() {                   # function
-    sleep .3                      # Sip Enabled, waiting for stupid spaces animation to finish
     $(yabai -m window --focus $1) # $1 is the first argument passed in (window id).
 }
 
 focusDisplay() {                   # function
-    sleep .3                       # Sip Enabled, waiting for stupid spaces animation to finish
     $(yabai -m display --focus $1) # $1 is the first argument passed in (window id).
 }
 
