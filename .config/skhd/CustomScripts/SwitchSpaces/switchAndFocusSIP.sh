@@ -63,15 +63,19 @@ TryFocusOnSpaceWereGoingToElseFocusOnAnyVisibleWindow() { # function
     # $4 space Number coming FROM 1-6
     windowOnNextSpace=$(yabai -m query --spaces --space $1 | jq -re '.["first-window"]') # is there an app on next space?
     if [[ "$windowOnNextSpace" -ne "0" ]]; then
+        # echo "There is an app on the next space, focusing on it."
         yabai -m space --focus "$2"
         focusWindow "$windowOnNextSpace"
     else # no app on new space
+        # echo "No app on the next space, focusing on any visible window."
         newWindowToFocusIfPossible=$(yabai -m query --windows | jq -re '.[] | select((.["is-visible"] == true) and .space != '$4').id' | head -n 1)
         if [[ -n "$newWindowToFocusIfPossible" ]]; then
             yabai -m space --focus "$2"
             focusWindow $newWindowToFocusIfPossible
+            # echo "Focused on a visible window."
         else
             yabai -m space --focus "$2"
+            # echo "No visible windows on the new space, nothing to focus on."
         fi
     fi
 }
@@ -79,8 +83,8 @@ TryFocusOnSpaceWereGoingToElseFocusOnAnyVisibleWindow() { # function
 if [[ $CurrentlyVisibleSpaceNames == *$firstSpaceName* ]]; then
     if [ -n ${CurrentlyFocusedWindowID} ]; then # (-n) >> != null
         if [ $CurrentlyFocusedDisplay -ne $inputKeyNumber ]; then
-            yabai -m space --focus "$secondSpacenumber"
-            focusWindow $CurrentlyFocusedWindowID
+            echo "Focusing on display $inputKeyNumber"
+            TryFocusOnSpaceWereGoingToElseFocusOnAnyVisibleWindow $secondSpaceName $secondSpacenumber $firstSpaceName $firstspacenumber
         else
             TryFocusOnSpaceWereGoingToElseFocusOnAnyVisibleWindow $secondSpaceName $secondSpacenumber $firstSpaceName $firstspacenumber
         fi
@@ -90,8 +94,7 @@ if [[ $CurrentlyVisibleSpaceNames == *$firstSpaceName* ]]; then
 elif [[ $CurrentlyVisibleSpaceNames == *$secondSpaceName* ]]; then
     if [ -n ${CurrentlyFocusedWindowID} ]; then # (-n) >> != null
         if [ $CurrentlyFocusedDisplay -ne $inputKeyNumber ]; then
-            yabai -m space --focus "$firstspacenumber"
-            focusWindow $CurrentlyFocusedWindowID
+            TryFocusOnSpaceWereGoingToElseFocusOnAnyVisibleWindow $firstSpaceName $firstspacenumber $secondSpaceName $secondSpacenumber
         else
             TryFocusOnSpaceWereGoingToElseFocusOnAnyVisibleWindow $firstSpaceName $firstspacenumber $secondSpaceName $secondSpacenumber
         fi
