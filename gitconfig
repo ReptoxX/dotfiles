@@ -1,0 +1,24 @@
+[core]
+	editor = nano
+	autocrlf = input
+[difftool "kdiff3"]
+    path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+[diff]
+	tool = "p4merge"
+[merge]
+        tool = "Sublime Merge"
+[mergetool "p4merge"]
+	path = "/Applications/p4merge.app/Contents/MacOS/p4merge"
+[difftool "p4merge"]
+	path = "/Applications/p4merge.app/Contents/MacOS/p4merge"
+
+[mergetool "Sublime Merge"]
+        cmd = smerge mergetool \"$BASE\" \"$REMOTE\" \"$LOCAL\" -o \"$MERGED\"
+#[merge]
+#	tool = kdiff3
+#	renamelimit = 16000
+#[mergetool "kdiff3"]
+#	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 $BASE $LOCAL $REMOTE -o $MERGED
+[user]
+	name = Julien Terzibaschian
+	email = jt@e-confirm.de

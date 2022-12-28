@@ -1,0 +1,12 @@
+IdentityFile ~/.ssh/id_rsa
+IdentityFile ~/.ssh/general.key
+
+Host *
+  ServerAliveInterval 60
+  TCPKeepAlive no
+
+Host 136.243.80.38
+  StrictHostKeyChecking no
+
+Host 62.146.95.197
+	HostKeyAlgorithms=+ssh-dss
