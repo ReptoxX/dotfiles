@@ -39,6 +39,7 @@ yabai -m rule --add app="^Sublime Merge$" manage=off
 yabai -m rule --add app="^TeamSpeak 3$" manage=off
 yabai -m rule --add title="Outlook-Einstellungen" manage=off
 yabai -m rule --add title="JetBrains Toolbox" manage=off
+yabai -m rule --add app="^Einstellungen$" manage=off
 
 #find ~/Library/Parallels/Applications\ Menus/ -maxdepth 3 -type f | awk -F'/' '{ print $NF; }' | awk '{$1=$1};1' | sort | uniq | tr "\n" "\0" | xargs -0 -I{} yabai -m rule --add app="^{}\$" title=".*" manage=on
 

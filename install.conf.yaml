@@ -4,7 +4,11 @@
   - [sh pre-install.sh, Running pre installation script]
   - [mkdir -p ~/.oh-my-zsh/custom/, Creating oh-my-zsh custom folder]
   - [mkdir -p ~/.oh-my-zsh/custom/plugins, Creating oh-my-zsh customer plugin folder]
-  - [brew bundle, Installing Homebrew formulas from Brewfile]
+  - description: Installing Homebrew forumlas from Brewfile
+    command: |
+      if [ "$(uname -s)" = "Darwin" ]; then
+        brew bundle
+      fi
 
 - link:
     ~/.profile: profile
@@ -18,6 +22,15 @@
     ~/.zshenv: zshenv
     ~/.zshrc: zshrc
     ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: oh-my-zsh/custom/plugins/zsh-autosuggestions
+    ~/.config/nvim/: 
+      relink: true
+      path: config/nvim/
+
+- defaults:
+    link:
+      if: '[ "$(uname -s)" = "Darwin" ]'
+
+- link:
     ~/.config/yabai:
       create: true
       glob: true
@@ -28,10 +41,6 @@
       path: config/skhd/*
     ~/.config/karabiner/karabiner.json: config/karabiner/karabiner.json
     ~/.config/karabiner/assets/complex_modifications/reptoxx.json: config/karabiner/assets/complex_modifications/reptoxx.json
-    ~/.config/nvim/: 
-      relink: true
-      path: config/nvim/
-
 
 - create:
   - ~/Coding
