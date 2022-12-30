@@ -1,4 +1,10 @@
-- clean: ['~']
+- clean: ['~', '~/.oh-my-zsh/custom/', '~/.oh-my-zsh/custom/plugins/']
+
+- shell:
+  - [sh pre-install.sh, Running pre installation script]
+  - [mkdir -p ~/.oh-my-zsh/custom/, Creating oh-my-zsh custom folder]
+  - [mkdir -p ~/.oh-my-zsh/custom/plugins, Creating oh-my-zsh customer plugin folder]
+  - [brew bundle, Installing Homebrew formulas from Brewfile]
 
 - link:
     ~/.profile: profile
@@ -11,5 +17,25 @@
     ~/.zprofile: zprofile
     ~/.zshenv: zshenv
     ~/.zshrc: zshrc
+    ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: oh-my-zsh/custom/plugins/zsh-autosuggestions
+    ~/.config/yabai:
+      create: true
+      glob: true
+      path: config/yabai/*
+    ~/.config/skhd:
+      create: true
+      glob: true
+      path: config/skhd/*
+    ~/.config/karabiner/karabiner.json: config/karabiner/karabiner.json
+    ~/.config/karabiner/assets/complex_modifications/reptoxx.json: config/karabiner/assets/complex_modifications/reptoxx.json
+    ~/.config/nvim/: 
+      relink: true
+      path: config/nvim/
 
 
+- create:
+  - ~/Coding
+
+- shell:
+  - [config/nvim/install.sh, Installing Packer & Dependencies]
+  - [git submodule update --init --recursive, Installing submodules]
