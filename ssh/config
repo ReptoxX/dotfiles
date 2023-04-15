@@ -10,3 +10,13 @@ Host 136.243.80.38
 
 Host 62.146.95.197
 	HostKeyAlgorithms=+ssh-dss
+
+Host proxy
+    HostName reptoxx.com
+    Port 2413
+    User reptoxx
+Host kubernetes-hetzner
+    HostName 192.168.1.107
+    User reptoxx
+    ProxyJump proxy
+

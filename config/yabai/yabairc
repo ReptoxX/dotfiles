@@ -60,8 +60,9 @@ yabai -m config normal_window_opacity        0.97
 
 yabai -m config window_border                on
 yabai -m config window_border_width          3
-yabai -m config active_window_border_color   0xFF40FF00
-yabai -m config normal_window_border_color   0x00FFFFFF
+yabai -m config window_border_blur           off
+yabai -m config active_window_border_color   0xFFFFFF00
+yabai -m config normal_window_border_color   0x00FFFFAA
 yabai -m config insert_feedback_color        0xffd75f5f
 
 # window focus follows mouse
