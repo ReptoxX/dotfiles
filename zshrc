@@ -9,6 +9,8 @@ export PATH=$HOME/.bin:$PATH
 # User configuration
 
 source ~/.bash_aliases
+source $(readlink ~/.ssh/gitFunctions.sh)
+
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -112,3 +114,11 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 eval $(thefuck --alias)
+
+# pnpm
+export PNPM_HOME="/Users/terzibaschian/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

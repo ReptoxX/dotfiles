@@ -16,7 +16,7 @@ brew "numpy", link: false
 brew "proj"
 brew "python@3.9"
 brew "terminal-notifier"
-brew "thefuck"
+brew "thefuck" 
 brew "tmux"
 brew "koekeishiya/formulae/skhd"
 brew "koekeishiya/formulae/yabai", args: ["HEAD"]

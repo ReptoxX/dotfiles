@@ -1,0 +1,69 @@
+#!/usr/bin/env bash
+
+function func_gitLiveStableAllIntranet () {
+    func_gitLiveStableIn tvg
+    func_gitLiveStableIn tc
+    func_gitLiveStableIn alpha
+    func_gitLiveStableIn galeria
+    func_gitCheckout test
+    git merge origin/live_stable
+    git status
+
+    func_continueMerge
+}
+
+function func_gitLiveStableAll () {
+
+	func_gitLiveStableIn tvg
+    	func_gitLiveStableIn alpha
+    	func_gitLiveStableIn econfirm
+    	func_gitLiveStableIn rtk
+    	func_gitLiveStableIn expitv
+	func_gitLiveStableIn tc
+    	func_gitLiveStableIn wootb
+    	func_gitLiveStableIn dtps
+    	func_gitLiveStableIn tf
+#    func_gitLiveStableIn galeria
+#    func_gitLiveStableIn karstadt
+#    func_gitLiveStableIn tuishopfinder
+}
+
+function func_continueMerge () {
+    while true; do
+        echo "Mit nächstem live Branch fortfahren? [Y/n] "
+        read yn
+        case $yn in
+            [Nn]* ) exit 1;;
+            [Yy]* | * ) git push; func_gitAddCommitPush; break;;
+        esac
+    done
+}
+
+function func_gitLiveStableIn () {
+    func_gitCheckout live_"$1"
+    git merge origin/live_stable
+    git status
+
+    func_continueMerge
+}
+
+function func_gitCheckout () {
+    git checkout "$1" && git fetch && git pull
+}
+
+function func_gitAddCommit () {
+    if [ -z "$1" ]; then
+        git add . && git commit
+    else
+        git add . && git commit -m "$1"
+    fi
+}
+
+function func_gitAddCommitPush () {
+    if [ -z "$1" ]; then
+        git add . && git commit && git push
+    else
+        git add . && git commit -m "$1" && git push
+    fi
+}
+

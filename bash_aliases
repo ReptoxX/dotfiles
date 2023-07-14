@@ -6,3 +6,6 @@ alias 'vim'='nvim'
 
 alias proxy='ssh -p 2413 reptoxx@reptoxx.com'
 alias sshJarvis='ssh jt@jarvis.e-confirm.de'
+alias gitCheckout='func_gitCheckout'
+alias gitLiveStableInAll='func_gitLiveStableAll'
+alias gitLiveStableIn='func_gitLiveStableIn'

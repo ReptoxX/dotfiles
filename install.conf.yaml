@@ -25,6 +25,7 @@
     ~/.config/nvim/: 
       relink: true
       path: config/nvim/
+    ~/.wezterm.lua: wezterm.lua
 
 - defaults:
     link:
