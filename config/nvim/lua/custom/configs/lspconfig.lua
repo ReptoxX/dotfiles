@@ -2,6 +2,7 @@ local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
+local servers = { "html", "tailwindcss", "tsserver", "emmet_ls" }
 
 lspconfig.rust_analyzer.setup({
   on_attach = on_attach,
@@ -9,3 +10,10 @@ lspconfig.rust_analyzer.setup({
   filetypes = {"rust"},
   root_dir = lspconfig.util.root_pattern("Cargo.toml")
 })
+
+for _,lsp in ipairs(servers) do
+  lspconfig[lsp].setup({
+    on_attach = on_attach,
+    capabilities = capabilities
+  })
+end

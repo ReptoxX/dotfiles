@@ -10,6 +10,10 @@
         brew bundle
       fi
 
+- create:
+  - ~/.config
+  - ~/.tmux
+
 - link:
     ~/.profile: profile
     ~/.bash_aliases: bash_aliases
@@ -26,6 +30,7 @@
       relink: true
       path: config/nvim/
     ~/.wezterm.lua: wezterm.lua
+    ~/.config/tmux: config/tmux
 
 - defaults:
     link:
