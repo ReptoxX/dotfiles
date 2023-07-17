@@ -23,6 +23,7 @@
 
 - create:
   - ~/.config
+  - ~/.config/tmux
   - ~/.tmux
 
 - link:
