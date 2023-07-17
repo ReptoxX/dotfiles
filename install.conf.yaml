@@ -17,7 +17,7 @@
           curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
           tar xzf /tmp/nvim-linux64.tar.gz
           cd /tmp/nvim-linux64
-          mv bin/* /usr/bin/
+          mv bin/* /usr/local/bin/
         fi
       fi
 
