@@ -12,7 +12,7 @@ config.font = wezterm.font(
   "JetBrainsMono Nerd Font",
   { weight = "Regular" }
 )
-config.font_size = 12
+config.font_size = 14
 config.freetype_load_target = "Normal"
 
 config.window_frame = {
