@@ -18,7 +18,8 @@ M.general = {
 
 M.custom = {
   n = {
-    ["<leader>s"] = {":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", "Replace hovered word"}
+    ["<leader>s"] = {":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", "Replace hovered word"},
+    ["<a-key><esc>"] = {":%s/\\/", "do something"}
   }
 }
 

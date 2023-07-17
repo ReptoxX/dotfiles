@@ -31,5 +31,6 @@ config.hide_tab_bar_if_only_one_tab = true
 
 -- Windows specific
 config.default_domain = "WSL:Ubuntu-22.04"
+config.audible_bell = "Disabled"
 
 return config

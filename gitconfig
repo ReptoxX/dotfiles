@@ -22,3 +22,5 @@
 [user]
 	name = Julien Terzibaschian
 	email = jt@e-confirm.de
+[init]
+	defaultBranch = main
