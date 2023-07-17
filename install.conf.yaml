@@ -9,6 +9,17 @@
       if [ "$(uname -s)" = "Darwin" ]; then
         brew bundle
       fi
+  - description: Installing neovim to system (/usr/bin)
+    command: |
+      if [ "$(uname -s)" = "Linux" ]; then
+        if [ ! -f "/usr/bin/nvim" ]; then
+          cd /tmp/
+          curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+          tar xzf /tmp/nvim-linux64.tar.gz
+          cd /tmp/nvim-linux64
+          mv bin/* /usr/local/bin/
+        fi
+      fi
 
 - create:
   - ~/.config
