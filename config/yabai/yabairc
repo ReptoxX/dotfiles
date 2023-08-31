@@ -16,7 +16,8 @@ yabai -m space 9 --label nine
 yabai -m rule --add app="^System Settings$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Karabiner-Elements$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Karabiner-EventViewer$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
+# yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
+yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^Keka$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Alfred Preferences$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Disk Utility$" sticky=on layer=above manage=off
@@ -41,6 +42,7 @@ yabai -m rule --add title="Outlook-Einstellungen" manage=off
 yabai -m rule --add title="JetBrains Toolbox" manage=off
 yabai -m rule --add title="^Webex$" manage=off
 yabai -m rule --add title="JetBrains Gateway" manage=off
+yabai -m rule --add app="^Clockify Desktop$" manage=off
 
 # regex that matches JetBrains apps
 apps='^(IntelliJ IDEA|WebStorm|CLion|Jetbrains Client)$'
@@ -76,7 +78,7 @@ yabai -m config normal_window_border_color   0x00FFFFAA
 yabai -m config insert_feedback_color        0xffd75f5f
 
 # window focus follows mouse
-yabai -m config mouse_follows_focus          on
+yabai -m config mouse_follows_focus          off
 
 ## some other settings
 yabai -m config auto_balance                 off
