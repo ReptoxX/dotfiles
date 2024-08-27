@@ -1,5 +1,4 @@
 IdentityFile ~/.ssh/id_rsa
-IdentityFile ~/.ssh/general.key
 
 Host *
   ServerAliveInterval 60
@@ -14,9 +13,27 @@ Host 62.146.95.197
 Host proxy
     HostName reptoxx.com
     Port 2413
-    User reptoxx
+    User root
 Host kubernetes-hetzner
     HostName 192.168.1.107
     User reptoxx
     ProxyJump proxy
+Host minecraft
+    HostName 192.168.1.103
+    User minecraft
+    ProxyJump proxy
+Host application
+    HostName 192.168.1.104
+    User root
+    ProxyJump proxy
 
+# --- START CODER JETBRAINS coder.reptoxx.com
+Host coder-jetbrains--mycollection.main--coder.reptoxx.com
+  HostName coder.mycollection.main
+  ProxyCommand /home/reptoxx/.local/share/coder-gateway/coder.reptoxx.com/coder-linux-amd64 --global-config /home/reptoxx/.local/share/coder-gateway/coder.reptoxx.com/config ssh --stdio mycollection.main
+  ConnectTimeout 0
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  LogLevel ERROR
+  SetEnv CODER_SSH_SESSION_TYPE=JetBrains
+# --- END CODER JETBRAINS coder.reptoxx.com

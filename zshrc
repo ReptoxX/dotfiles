@@ -1,6 +1,14 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 alias pnx="pnpm nx --"
 export NODE_ENV=development
 export PATH=$HOME/.bin:$PATH
+export PATH=$HOME/.local/share/bob/nvim-bin:$PATH
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -9,7 +17,7 @@ export PATH=$HOME/.bin:$PATH
 # User configuration
 
 source ~/.bash_aliases
-source $(readlink ~/.ssh/gitFunctions.sh)
+#source $(readlink ~/.ssh/gitFunctions.sh)
 
 
 # If you come from bash you might have to change your $PATH.
@@ -114,6 +122,7 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 eval $(thefuck --alias)
+eval "$(zoxide init zsh --cmd cd)"
 
 # pnpm
 export PNPM_HOME="/Users/terzibaschian/Library/pnpm"
@@ -122,3 +131,11 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
