@@ -182,3 +182,6 @@ run = 'move-node-to-workspace C'
 [[on-window-detected]]
 if.app-id = 'com.jetbrains.PhpStorm'
 run = 'move-node-to-workspace C'
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = 'move-node-to-workspace S'
