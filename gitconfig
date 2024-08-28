@@ -24,8 +24,10 @@
 	email = jt@e-confirm.de
 [init]
 	defaultBranch = main
+[safe]
+	directory = /mnt/Users/ReptoxX/Coding/reptoxx
 [filter "lfs"]
-	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+	required = true

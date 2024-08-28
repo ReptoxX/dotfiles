@@ -1,54 +1,52 @@
-- clean: ['~', '~/.oh-my-zsh/custom/', '~/.oh-my-zsh/custom/plugins/']
+- clean: ["~"]
 
 - shell:
-  - [sh pre-install.sh, Running pre installation script]
-  - [mkdir -p ~/.oh-my-zsh/custom/, Creating oh-my-zsh custom folder]
-  - [mkdir -p ~/.oh-my-zsh/custom/plugins, Creating oh-my-zsh customer plugin folder]
-  - description: Installing Homebrew forumlas from Brewfile
-    command: |
-      if [ "$(uname -s)" = "Darwin" ]; then
-        brew bundle
-      fi
-  - description: Installing neovim to system (/usr/bin)
-    command: |
-      if [ "$(uname -s)" = "Linux" ]; then
-        if [ ! -f "/usr/bin/nvim" ]; then
-          cd /tmp/
-          curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
-          tar xzf /tmp/nvim-linux64.tar.gz
-          cd /tmp/nvim-linux64
-          mv bin/* /usr/local/bin/
+    - [sh pre-install.sh, Running pre installation script]
+    # - description: Installing Homebrew forumlas from Brewfile
+    #   command: |
+    #     if [ "$(uname -s)" = "Darwin" ]; then
+    #       brew bundle
+    #     fi
+    - description: Installing neovim to system (/usr/bin)
+      command: |
+        if [ "$(uname -s)" = "Linux" ]; then
+          if [ ! -f "/usr/bin/nvim" ]; then
+            cd /tmp/
+            curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+            tar xzf /tmp/nvim-linux64.tar.gz
+            cd /tmp/nvim-linux64
+            mv bin/* /usr/local/bin/
+          fi
         fi
-      fi
 
 - create:
-  - ~/.config
-  - ~/.config/tmux
-  - ~/.tmux
+    - ~/.config
+    - ~/.config/tmux
 
 - link:
     ~/.profile: profile
     ~/.bash_aliases: bash_aliases
     ~/.gitconfig: gitconfig
     ~/.ssh/config:
-        path: ssh/config
-        create: true
-    ~/.vimrc: vimrc
+      path: ssh/config
+      create: true
     ~/.zprofile: zprofile
     ~/.zshenv: zshenv
     ~/.zshrc: zshrc
-    ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: oh-my-zsh/custom/plugins/zsh-autosuggestions
-    ~/.config/nvim/: 
+    ~/.config/nvim/:
       relink: true
       path: config/nvim/
     ~/.wezterm.lua: wezterm.lua
     ~/.config/tmux/tmux.conf: config/tmux/tmux.conf
-    ~/.config/nvim/lua/custom: config/nvim-custom
+    ~/.config/kitty: config/kitty
+    ~/.config/aerospace: config/aerospace
+    ~/.config/starship: config/starship
+    ~/.config/wezterm: config/wezterm
 
-- shell:
-  - description: Installing tmux package manager
-    command: |
-      [ ! -d "$HOME/.tmux/plugins/tpm" ] && git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+#- shell:
+#    - description: Installing tmux package manager
+#      command: |
+#        [ ! -d "$HOME/.tmux/plugins/tpm" ] && git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 
 - defaults:
     link:
@@ -67,8 +65,8 @@
     ~/.config/karabiner/assets/complex_modifications/reptoxx.json: config/karabiner/assets/complex_modifications/reptoxx.json
 
 - create:
-  - ~/Coding
+    - ~/Coding
 
 - shell:
-  - [config/nvim/install.sh, Installing Packer & Dependencies]
-  - [git submodule update --init --recursive, Installing submodules]
+    #    - [config/nvim/install.sh, Installing Packer & Dependencies]
+    - [git submodule update --init --recursive, Installing submodules]
