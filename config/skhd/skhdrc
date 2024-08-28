@@ -80,7 +80,7 @@ hyper - f : yabai -m window --toggle zoom-fullscreen
 #
 # go to each window WITHOUT going into a stack
 # ctrl + alt + cmd + lshift - i : yabai -m query --spaces | jq -re ".[] | select(.visible == 1).index" | xargs -I{} yabai -m query --windows --space {} | jq -re "[.[] | select((.\"stack-index\" <= 1) and (.app != \"Hammerspoon\"))]" | jq -sre "add | sort_by(.display, .frame.x, .frame.y, .id) | nth(index(map(select(.focused == 1))) - 1).id" | xargs -I{} yabai -m window --focus {}
-ctrl + alt + cmd + lshift - i : yabai -m query --spaces | jq -re '.[] | select(.["is-visible"] == true).index'  | xargs -I{} yabai -m query --windows --space {} | jq -re "[.[] | select(.app != \"Hammerspoon\")]" | jq -sre 'add | sort_by(.display, .frame.x, .frame.y, .id) | reverse | nth(index(map(select(.["has-focus"] == true))) - 1).id' | xargs -I{} yabai -m window --focus {}
+ctrl + alt + cmd + lshift - i : yabai -m query --spaces | jq -re '.[] | select(.["is-visible"] == true).index' | xargs -I{} yabai -m query --windows --space {} | jq -re "[.[] | select(.app != \"Hammerspoon\")]" | jq -sre 'add | sort_by(.display, .frame.x, .frame.y, .id) | reverse | nth(index(map(select(.["has-focus"] == true))) - 1).id' | xargs -I{} yabai -m window --focus {}
 
 # ctrl + alt + cmd + rshift - i : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
 
@@ -164,6 +164,6 @@ ctrl + alt + cmd + lshift - 0x43 : window=$(yabai -m query --windows --window | 
 #ctrl + alt - 2  : yabai -m display --focus 2
 #ctrl + alt - 3  : yabai -m display --focus 3
 
-cmd + shift - s : python3 ~/.config/yabai/dropdown Spotify
-cmd + shift - m : python3 ~/.config/yabai/dropdown Mail
-cmd + shift - t : python3 ~/.config/yabai/dropdown iTerm2
+cmd + shift - s : ~/.config/yabai/.venv/bin/python3 ~/.config/yabai/dropdown Spotify
+cmd + shift - m : ~/.config/yabai/.venv/bin/python3 ~/.config/yabai/dropdown Mail
+cmd + shift - t : ~/.config/yabai/.venv/bin/python3 ~/.config/yabai/dropdown iTerm2
