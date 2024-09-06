@@ -36,12 +36,12 @@
     ~/.config/nvim/:
       relink: true
       path: config/nvim/
-    ~/.wezterm.lua: wezterm.lua
     ~/.config/tmux/tmux.conf: config/tmux/tmux.conf
     ~/.config/kitty: config/kitty
     ~/.config/aerospace: config/aerospace
     ~/.config/starship: config/starship
     ~/.config/wezterm: config/wezterm
+    ~/.config/helper-scripts: config/helper-scripts
 
 #- shell:
 #    - description: Installing tmux package manager

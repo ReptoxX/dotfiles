@@ -29,6 +29,8 @@ alias ga='git add -p'
 alias gcoall='git checkout -- .'
 alias gr='git remote'
 alias gre='git reset'
+alias gm='git merge'
+alias gmt='git mergetool'
 alias gitCheckout='func_gitCheckout'
 alias gitLiveStableInAll='func_gitLiveStableAll'
 alias gitLiveStableIn='func_gitLiveStableIn'
@@ -59,4 +61,3 @@ alias kl="kubectl logs -f"
 alias ke="kubectl exec -it"
 alias kcns='kubectl config set-context --current --namespace'
 alias podname=''
-
