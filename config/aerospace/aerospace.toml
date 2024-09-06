@@ -222,4 +222,4 @@ if.app-id = 'org.ferdium.ferdium-app'
 run = 'move-node-to-workspace 1'
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
-run = 'move-node-to-workspace 1'
+run = 'move-node-to-workspace 2'
