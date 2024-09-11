@@ -32,7 +32,6 @@
       create: true
     ~/.zprofile: zprofile
     ~/.zshenv: zshenv
-    ~/.zshrc: zshrc
     ~/.config/nvim/:
       relink: true
       path: config/nvim/

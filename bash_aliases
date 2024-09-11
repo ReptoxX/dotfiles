@@ -33,6 +33,13 @@ alias gitCheckout='func_gitCheckout'
 alias gitLiveStableInAll='func_gitLiveStableAll'
 alias gitLiveStableIn='func_gitLiveStableIn'
 
+# Docker
+alias dco="docker compose"
+alias dps="docker ps"
+alias dpa="docker ps -a"
+alias dl="docker ps -l -q"
+alias dx="docker exec -it"
+
 # Dirs
 alias ..="cd .."
 alias ...="cd ../.."
@@ -59,4 +66,3 @@ alias kl="kubectl logs -f"
 alias ke="kubectl exec -it"
 alias kcns='kubectl config set-context --current --namespace'
 alias podname=''
-

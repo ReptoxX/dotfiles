@@ -1,13 +1,15 @@
 # Set Starship Path
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH=$HOME/.bin:$PATH
-export PATH=$HOME/.local/share/bob/nvim-bin:$PATH
+# Change PATH here
+# check if folder exists
+if [ ! -d "/opt/homebrew/bin" ]; then
+    export PATH=/opt/homebrew/bin:$PATH
+fi
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-#export PATH="/Applications/PHPStorm.app/Contents/MacOS:$PATH"
+export PATH=$HOME/.bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/share/bob/nvim-bin:$PATH
 
 # User configuration
 
