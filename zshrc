@@ -12,6 +12,7 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.local/share/bob/nvim-bin:$PATH
 
 # User configuration
+source ~/.config/helper-scripts/init.sh
 
 # This file is a place to put your custom aliases, functions, etc. 
 source ~/.bash_aliases

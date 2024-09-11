@@ -58,7 +58,7 @@ function func_gitCheckout() {
 
 function func_gitAddCommit() {
     if [ -z "$1" ]; then
-        git add . && git commit
+        git add . && git commit --no-edit
     else
         git add . && git commit -m "$1"
     fi

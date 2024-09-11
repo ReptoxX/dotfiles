@@ -129,7 +129,7 @@ alt-9 = 'workspace 9'
 alt-b = 'workspace B'
 alt-c = 'workspace C'
 alt-m = 'workspace M'
-alt-s = 'workspace S'
+alt-d = 'workspace D'
 alt-t = 'workspace T'
 alt-z = 'workspace Z'
 
@@ -146,7 +146,7 @@ alt-shift-9 = 'move-node-to-workspace 9'
 alt-shift-b = 'move-node-to-workspace B'
 alt-shift-c = 'move-node-to-workspace C'
 alt-shift-m = 'move-node-to-workspace M'
-alt-shift-s = 'move-node-to-workspace S'
+alt-shift-d = 'move-node-to-workspace D'
 alt-shift-t = 'move-node-to-workspace T'
 alt-shift-z = 'move-node-to-workspace Z'
 #
@@ -176,6 +176,15 @@ alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
+[workspace-to-monitor-force-assignment]
+1 = 'built-in'
+2 = 'built-in'
+3 = 'built-in'
+T = 'main'
+C = 'main'
+D = 'main'
+B = [1, 'main', 'built-in']
+
 
 [[on-window-detected]]
 if.app-id = 'net.kovidgoyal.kitty'
@@ -193,11 +202,24 @@ run = 'move-node-to-workspace C'
 if.app-id = 'com.jetbrains.PhpStorm'
 run = 'move-node-to-workspace C'
 [[on-window-detected]]
-if.app-id = 'com.spotify.client'
-run = 'move-node-to-workspace M'
+if.app-id = 'com.jetbrains.gateway'
+run = 'move-node-to-workspace C'
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.cwm.guest'
+run = 'move-node-to-workspace C'
 [[on-window-detected]]
 if.app-id = 'com.tinyapp.TablePlus'
 run = 'move-node-to-workspace S'
 [[on-window-detected]]
 if.app-id = "us.zoom.xos"
 run = 'move-node-to-workspace Z'
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
+run = 'move-node-to-workspace M'
+# Built-in Monitor
+[[on-window-detected]]
+if.app-id = 'org.ferdium.ferdium-app'
+run = 'move-node-to-workspace 1'
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = 'move-node-to-workspace 2'
