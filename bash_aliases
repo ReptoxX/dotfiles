@@ -1,10 +1,15 @@
-alias cp='rsync -avz'
+# common useful aliases
+alias getip='curl ip-api.com'
+alias cg='sudo cyberghostvpn'
+alias cgc='sudo $HOME/.config/scripts/cgw connect'
+alias cgd='sudo $HOME/.config/scripts/cgw disconnect'
 
 # alias nvim to vim
 alias 'vim'='nvim'
 alias 'v'='nvim'
 
 # Rewrite classic commands
+alias cp='rsync -avz'
 alias ls='eza --icons=always'
 alias cat=bat
 alias la=tree
@@ -14,8 +19,8 @@ alias lt="eza --tree --level=2 --long --icons --git"
 alias reload='source ~/.zshrc'
 
 # GIT
-alias gc="git commit -m"
-alias gca="git commit -a -m"
+alias gc="git commit"
+alias gca="git commit -a"
 alias gp="git push origin HEAD"
 alias gpu="git pull origin"
 alias gst="git status"
@@ -25,7 +30,7 @@ alias gco="git checkout"
 alias gb='git branch'
 alias gba='git branch -a'
 alias gadd='git add'
-alias ga='git add -p'
+alias ga='git add'
 alias gcoall='git checkout -- .'
 alias gr='git remote'
 alias gre='git reset'

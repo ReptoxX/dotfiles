@@ -9,3 +9,4 @@ fi
 export PATH=$HOME/.bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.local/share/bob/nvim-bin:$PATH
+. "/home/reptoxx/.deno/env"
