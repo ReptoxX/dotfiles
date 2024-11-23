@@ -11,8 +11,11 @@ export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
 # Change PATH here
 # check if folder exists
-if [ ! -d "/opt/homebrew/bin" ]; then
+if [ -d "/opt/homebrew/bin" ]; then
     export PATH=/opt/homebrew/bin:$PATH
+    if [ -d "/opt/homebrew/sbin" ]; then
+        export PATH=/opt/homebrew/sbin:$PATH
+    fi
 fi
 
 export PATH=$HOME/.bin:$PATH
@@ -48,4 +51,4 @@ export NVM_DIR="$HOME/.nvm"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-. "/home/reptoxx/.deno/env"
+# . "/home/reptoxx/.deno/env"

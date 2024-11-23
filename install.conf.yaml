@@ -24,13 +24,10 @@
     - ~/.config/tmux
 
 - link:
+    ~/.zshrc: zshrc
     ~/.profile: profile
     ~/.bash_aliases: bash_aliases
     ~/.gitconfig: gitconfig
-    ~/.ssh/config:
-      path: ssh/config
-      create: true
-    ~/.zprofile: zprofile
     ~/.zshenv: zshenv
     ~/.config/nvim/:
       relink: true
@@ -41,6 +38,9 @@
     ~/.config/starship: config/starship
     ~/.config/wezterm: config/wezterm
     ~/.config/helper-scripts: config/helper-scripts
+    ~/.config/vscode/style.css: config/vscode/style.css
+    ~/.config/vscode/script.js: config/vscode/script.js
+    ~/.password-store: password-store
 
 #- shell:
 #    - description: Installing tmux package manager
@@ -62,10 +62,12 @@
       path: config/skhd/*
     ~/.config/karabiner/karabiner.json: config/karabiner/karabiner.json
     ~/.config/karabiner/assets/complex_modifications/reptoxx.json: config/karabiner/assets/complex_modifications/reptoxx.json
+    ~/.config/linearmouse: config/linearmouse
 
 - create:
     - ~/Coding
 
 - shell:
+    - [defaults write -g ApplePressAndHoldEnabled -bool false] # disable apple press and hold, enabling key repeat
     #    - [config/nvim/install.sh, Installing Packer & Dependencies]
     - [git submodule update --init --recursive, Installing submodules]
