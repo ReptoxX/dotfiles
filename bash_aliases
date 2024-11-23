@@ -14,7 +14,7 @@ alias lt="eza --tree --level=2 --long --icons --git"
 alias reload='source ~/.zshrc'
 
 # GIT
-alias gc="git commit -m"
+alias gc="git commit"
 alias gca="git commit -a -m"
 alias gp="git push origin HEAD"
 alias gpu="git pull origin"
