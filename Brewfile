@@ -1,110 +1,73 @@
 tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/core"
-tap "homebrew/services"
-tap "koekeishiya/formulae"
-brew "ansible"
+tap "nikitabobko/tap"
+# Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Secure runtime for JavaScript and TypeScript
 brew "deno"
-brew "geos"
+# Modern, maintained replacement for ls
+brew "eza"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# Distributed revision control system
 brew "git"
-brew "golangci-lint"
-brew "helm"
-brew "htop"
-brew "kubernetes-cli"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-brew "node"
-brew "numpy", link: false
-brew "proj"
-brew "python@3.10"
-brew "python@3.9"
-brew "terminal-notifier"
+# Password manager
+brew "pass"
+# Pinentry for GPG on Mac
+brew "pinentry-mac"
+# Safe, concurrent, practical language
+brew "rust"
+# Graphical command-line client for SSH
+brew "sshs"
+# Cross-shell prompt for astronauts
+brew "starship"
+# Programmatically correct mistyped console commands
 brew "thefuck"
+# Terminal multiplexer
 brew "tmux"
-brew "koekeishiya/formulae/skhd"
-brew "koekeishiya/formulae/yabai", args: ["HEAD"]
-cask "all-in-one-messenger"
-cask "brave-browser"
-cask "clockify"
-cask "cyberduck"
-cask "discretescroll"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
+# AeroSpace is an i3-like tiling window manager for macOS
+cask "aerospace"
+# Display management tool
+cask "betterdisplay"
+# Password and credentials manager
 cask "enpass"
-cask "iterm2"
-cask "jetbrains-gateway"
+cask "font-geist-mono"
+cask "font-monaspace"
+# Utility to hide menu bar items
+cask "hiddenbar"
+# Keyboard customiser
 cask "karabiner-elements"
+# Customise mouse behavior
+cask "linearmouse"
+# Clipboard manager
 cask "maccy"
-cask "microsoft-teams"
+# Simple application that will prevent iTunes or Apple Music from launching
 cask "notunes"
-cask "postman"
+# Control your tools with a few keystrokes
 cask "raycast"
+# Music streaming service
 cask "spotify"
-cask "tableplus"
+# Video game digital distribution service
+cask "steam"
+# Voice communication client
 cask "teamspeak-client"
+# Open-source code editor
 cask "visual-studio-code"
+# GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
-cask "zoom"
-vscode "alexdima.copy-relative-path"
-vscode "arcticicestudio.nord-visual-studio-code"
-vscode "arturock.gitstash"
-vscode "astro-build.astro-vscode"
-vscode "atlassian.atlascode"
-vscode "bmewburn.vscode-intelephense-client"
-vscode "bradlc.vscode-tailwindcss"
-vscode "Catppuccin.catppuccin-vsc"
-vscode "christian-kohler.npm-intellisense"
-vscode "christian-kohler.path-intellisense"
-vscode "chrmarti.regex"
-vscode "coder.coder-remote"
-vscode "donjayamanne.githistory"
-vscode "eamodio.gitlens"
+# Gecko based web browser
+cask "zen-browser"
+vscode "amodio.toggle-excluded-files"
+vscode "asvetliakov.vscode-neovim"
+vscode "be5invis.vscode-custom-css"
+vscode "catppuccin.catppuccin-vsc"
+vscode "catppuccin.catppuccin-vsc-icons"
+vscode "daltonmenezes.aura-theme"
+vscode "equinusocio.moxer-icons"
 vscode "esbenp.prettier-vscode"
-vscode "firsttris.vscode-jest-runner"
-vscode "formulahendry.auto-close-tag"
-vscode "formulahendry.auto-complete-tag"
-vscode "formulahendry.auto-rename-tag"
-vscode "GitHub.copilot"
-vscode "GitHub.copilot-chat"
-vscode "GraphQL.vscode-graphql"
-vscode "GraphQL.vscode-graphql-syntax"
-vscode "hashicorp.terraform"
-vscode "ipatalas.vscode-postfix-ts"
-vscode "ipedrazas.kubernetes-snippets"
-vscode "LeonQin.auto-insert-comma"
-vscode "lokalise.i18n-ally"
-vscode "mquandalle.graphql"
-vscode "ms-azuretools.vscode-docker"
-vscode "ms-kubernetes-tools.vscode-kubernetes-tools"
-vscode "ms-python.isort"
-vscode "ms-python.python"
-vscode "ms-python.vscode-pylance"
-vscode "ms-toolsai.jupyter-keymap"
-vscode "ms-vscode-remote.remote-containers"
-vscode "ms-vscode-remote.remote-ssh"
-vscode "ms-vscode-remote.remote-ssh-edit"
-vscode "ms-vscode.makefile-tools"
-vscode "ms-vscode.remote-explorer"
-vscode "ms-vscode.remote-server"
-vscode "ms-vscode.vscode-typescript-next"
-vscode "naumovs.color-highlight"
-vscode "oderwat.indent-rainbow"
-vscode "Orta.vscode-jest"
-vscode "paragdiwan.gitpatch"
-vscode "PeterSchmalfeldt.explorer-exclude"
-vscode "PKief.material-icon-theme"
-vscode "Prisma.prisma"
-vscode "quicktype.quicktype"
-vscode "redhat.vscode-yaml"
-vscode "rust-lang.rust-analyzer"
-vscode "smockle.xcode-default-theme"
-vscode "smulyono.reveal"
-vscode "svelte.svelte-vscode"
-vscode "tamasfe.even-better-toml"
-vscode "tobiaswaelde.clockify-tracker"
-vscode "traBpUkciP.vscode-npm-scripts"
-vscode "vscode-icons-team.vscode-icons"
-vscode "vscodevim.vim"
-vscode "WallabyJs.console-ninja"
-vscode "wholroyd.jinja"
-vscode "wix.vscode-import-cost"
-vscode "xdebug.php-debug"
-vscode "ZainChen.json"
+vscode "supermaven.supermaven"

@@ -47,7 +47,7 @@ key-mapping.preset = 'qwerty'
 # See https://nikitabobko.github.io/AeroSpace/guide#on-focus-changed-callbacks
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
-on-focus-changed = ['move-mouse window-lazy-center']
+# on-focus-changed = ['move-mouse window-lazy-center']
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
@@ -199,6 +199,10 @@ if.app-id = 'company.thebrowser.Browser'
 run = 'move-node-to-workspace B'
 [[on-window-detected]]
 if.app-id = 'org.mozilla.com.zen.browser'
+if.window-title-regex-substring = 'Picture-in-Picture'
+run = 'layout floating'
+[[on-window-detected]]
+if.app-id = 'org.mozilla.com.zen.browser'
 run = 'move-node-to-workspace B'
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
@@ -241,6 +245,5 @@ run = ['layout tiling', 'move-node-to-workspace 3']
 if.app-id = 'com.apple.iphonesimulator'
 run = ['layout floating']
 [[on-window-detected]]
-# if.app-name-regex-substring = 'Teamspeak\s3'
-if.window-title-regex-substring = 'Poke'
+if.window-title-regex-substring = 'poke'
 run = ['layout floating']
