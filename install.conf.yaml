@@ -37,6 +37,7 @@
     ~/.config/aerospace: config/aerospace
     ~/.config/starship: config/starship
     ~/.config/wezterm: config/wezterm
+    ~/.config/ghostty: config/ghostty
     ~/.config/helper-scripts: config/helper-scripts
     ~/.config/vscode/style.css: config/vscode/style.css
     ~/.config/vscode/script.js: config/vscode/script.js
@@ -69,5 +70,6 @@
 
 - shell:
     - [defaults write -g ApplePressAndHoldEnabled -bool false] # disable apple press and hold, enabling key repeat
+    - [defaults write com.apple.dock expose-group-apps -bool true]
     #    - [config/nvim/install.sh, Installing Packer & Dependencies]
     - [git submodule update --init --recursive, Installing submodules]
