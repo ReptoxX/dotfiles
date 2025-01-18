@@ -22,7 +22,8 @@
 /* Code comment style */
 .mtk8 {
   font-family: var(--font-curly) !important;
-  font-weight: 350 !important;
+  font-size: 1.09em;
+  /* font-weight: 350 !important; */
   color: var(--text-green) !important;
 }
 

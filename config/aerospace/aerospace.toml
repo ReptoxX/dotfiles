@@ -197,14 +197,21 @@ run = 'move-node-to-workspace T'
 if.app-id = 'com.googlecode.iterm2'
 run = 'move-node-to-workspace T'
 [[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = 'move-node-to-workspace T'
+[[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser'
 run = 'move-node-to-workspace B'
 [[on-window-detected]]
-if.app-id = 'org.mozilla.com.zen.browser'
+if.app-id = 'app.zen-browser.zen'
 if.window-title-regex-substring = 'Picture-in-Picture'
 run = 'layout floating'
 [[on-window-detected]]
-if.app-id = 'org.mozilla.com.zen.browser'
+if.app-id = 'app.zen-browser.zen'
+if.window-title-regex-substring = 'Bitwarden Password Manager'
+run = 'layout floating'
+[[on-window-detected]]
+if.app-id = 'app.zen-browser.zen'
 run = 'move-node-to-workspace B'
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'

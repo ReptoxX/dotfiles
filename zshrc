@@ -5,6 +5,8 @@ HISTSIZE=50000
 SAVEHIST=100000
 HISTFILE=~/.cache/zsh/.histfile
 
+autoload -Uz compinit
+compinit
 
 # Set Starship Path
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
@@ -22,6 +24,10 @@ export PATH=$HOME/.bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.local/share/bob/nvim-bin:$PATH
 
+# Carapace setup
+export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
+zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+
 # User configuration
 source ~/.config/helper-scripts/init.sh
 
@@ -31,6 +37,7 @@ source ~/.bash_aliases
 eval "$(starship init zsh)"
 eval $(thefuck --alias)
 eval "$(zoxide init zsh --cmd cd)"
+source <(carapace _carapace)
 
 # pnpm
 export PNPM_HOME="$HOME/.pnpm-store"
@@ -53,3 +60,4 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export XDG_CONFIG_HOME="$HOME/.config/"
 # . "/home/reptoxx/.deno/env"
+
