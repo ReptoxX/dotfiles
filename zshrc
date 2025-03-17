@@ -25,8 +25,8 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.local/share/bob/nvim-bin:$PATH
 
 # Carapace setup
-export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
-zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+# export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
+# zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 
 # User configuration
 source ~/.config/helper-scripts/init.sh
@@ -37,7 +37,7 @@ source ~/.bash_aliases
 eval "$(starship init zsh)"
 eval $(thefuck --alias)
 eval "$(zoxide init zsh --cmd cd)"
-source <(carapace _carapace)
+# source <(carapace _carapace)
 
 # pnpm
 export PNPM_HOME="$HOME/.pnpm-store"

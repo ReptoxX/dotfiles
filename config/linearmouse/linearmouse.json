@@ -3,42 +3,43 @@
     {
       "if" : {
         "device" : {
-          "productID" : "0xc548",
-          "category" : "mouse",
           "vendorID" : "0x46d",
+          "category" : "mouse",
+          "productID" : "0xc548",
           "productName" : "USB Receiver"
         }
+      },
+      "pointer" : {
+        "speed" : 0.0689655172413792768,
+        "acceleration" : 0.53,
+        "disableAcceleration" : false
       },
       "buttons" : {
         "universalBackForward" : true
       },
-      "pointer" : {
-        "disableAcceleration" : false,
-        "acceleration" : 0.3752
-      },
       "scrolling" : {
-        "distance" : {
-          "vertical" : 8,
-          "horizontal" : 7
-        },
         "acceleration" : 1,
-        "speed" : 0
+        "speed" : 0,
+        "distance" : {
+          "horizontal" : 7,
+          "vertical" : 8
+        }
       }
     },
     {
+      "if" : {
+        "app" : "com.microsoft.VSCode",
+        "device" : {
+          "productID" : "0xc548",
+          "vendorID" : "0x46d",
+          "category" : "mouse",
+          "productName" : "USB Receiver"
+        }
+      },
       "scrolling" : {
         "distance" : {
           "vertical" : 3
         }
-      },
-      "if" : {
-        "device" : {
-          "productID" : "0xc548",
-          "productName" : "USB Receiver",
-          "vendorID" : "0x46d",
-          "category" : "mouse"
-        },
-        "app" : "com.microsoft.VSCode"
       }
     }
   ],
