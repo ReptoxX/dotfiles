@@ -248,6 +248,9 @@ run = 'layout floating'
 if.app-id = 'com.figma.Desktop'
 run = 'move-node-to-workspace N'
 [[on-window-detected]]
+if.app-id = 'com.teamspeak.5.client'
+run = ['move-node-to-workspace 3']
+[[on-window-detected]]
 if.app-id = 'com.teamspeak.TeamSpeak3'
 check-further-callbacks = true
 run = ['layout tiling', 'move-node-to-workspace 3']

@@ -38,6 +38,7 @@ function func_continueMerge() {
         [Nn]*) exit 1 ;;
         [Yy]* | *)
             func_gitAddCommitPush
+            git push
             break
             ;;
         esac
@@ -65,5 +66,5 @@ function func_gitAddCommit() {
 }
 
 function func_gitAddCommitPush() {
-    git add . && git commit --no-edit && git push
+    git add . && git commit --no-edit || true
 }
