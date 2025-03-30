@@ -258,6 +258,9 @@ run = ['layout tiling', 'move-node-to-workspace 3']
 if.app-id = 'com.apple.iphonesimulator'
 run = ['layout floating']
 [[on-window-detected]]
+if.app-id = 'Cisco-Systems.Spark'
+run = ['layout floating']
+[[on-window-detected]]
 if.window-title-regex-substring = 'poke|Connection'
 run = ['layout floating']
 [[on-window-detected]]
