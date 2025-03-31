@@ -1,3 +1,4 @@
+zmodload zsh/zprof
 # Add deno completions to search path
 if [[ ":$FPATH:" != *":/home/reptoxx/.zsh/completions:"* ]]; then export FPATH="/home/reptoxx/.zsh/completions:$FPATH"; fi
 # history
@@ -5,8 +6,8 @@ HISTSIZE=50000
 SAVEHIST=100000
 HISTFILE=~/.cache/zsh/.histfile
 
-autoload -Uz compinit
-compinit
+# autoload -Uz compinit
+# compinit
 
 # Set Starship Path
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
@@ -49,11 +50,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# Node Version Manager
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # bun completions
 [ -s "/home/reptoxx/.bun/_bun" ] && source "/home/reptoxx/.bun/_bun"
 
@@ -62,4 +58,7 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export XDG_CONFIG_HOME="$HOME/.config/"
 # . "/home/reptoxx/.deno/env"
+# fnm
+eval "`fnm env`"
 
+zprof
