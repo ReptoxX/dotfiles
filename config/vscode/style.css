@@ -2,8 +2,13 @@
 	/* Aura Dark (Smooth) */
 	/* --custom-primary: #110f17;
   --custom-secondary: #1a1824; */
-	--custom-primary: #eff1f5;
-	--custom-secondary: #d2d5da;
+	/* Monokai Pro (Filter Oregon) */
+	--custom-primary: #282a3a;
+	--custom-secondary: #1e1f2b;
+
+	/* Monokai Pro Sun */
+	/* --custom-primary: #eff1f5; */
+	/* --custom-secondary: #d2d5da; */
 
 	--hover-shadow: 0px 8px 32px rgba(0, 0, 0, 0.45);
 	--font: "Geist Mono", "Monaspace Radon", "Operator Mono";
@@ -27,7 +32,8 @@
 /*.mtk8 {*/
 /*	font-family: var(--font-curly) !important;*/
 /*	font-size: 1.09em;*/
-/*	/* font-weight: 350 !important; */*/
+/*	/* font-weight: 350 !important; */
+*/
 /*	color: var(--text-green) !important;*/
 /*}*/
 /* Disabled for light theme */

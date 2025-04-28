@@ -1,4 +1,3 @@
-zmodload zsh/zprof
 # Add deno completions to search path
 if [[ ":$FPATH:" != *":/home/reptoxx/.zsh/completions:"* ]]; then export FPATH="/home/reptoxx/.zsh/completions:$FPATH"; fi
 # history
@@ -60,5 +59,3 @@ export XDG_CONFIG_HOME="$HOME/.config/"
 # . "/home/reptoxx/.deno/env"
 # fnm
 eval "`fnm env`"
-
-zprof
