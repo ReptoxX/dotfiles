@@ -38,6 +38,7 @@
     ~/.config/starship: config/starship
     ~/.config/wezterm: config/wezterm
     ~/.config/ghostty: config/ghostty
+    ~/.config/scopebuddy: config/scopebuddy
     ~/.config/helper-scripts: config/helper-scripts
     ~/.config/vscode/style.css: config/vscode/style.css
     ~/.config/vscode/script.js: config/vscode/script.js
